@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            A Secret Project
+        </title>
+    </head>
+ 
+<body>
+
+<h2>Hidden things by JayaShankar Mangina</h2>
+
+<form>
+    <label for="password_page">Enter the Secret Word</label>
+    <input type ="password" id="password_page" value="Secret" name="Password" min=10 max=50 step=2 value=30> <br>
+
+    <label for="Guess_page">Enter a Guess</label>
+    <input type ="text" id="Guess_page" name="Guess" autofocus> <br>
+
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">Result</p>
+
+<script> 
+var Correct = 0;
+var Wrong = 0;
+function processGuess (){
+
+    console.log("Getting form values")
+    Secret = document.getElementById("password_page").value
+    Guess = document.getElementById("Guess_page").value
+    out = document.getElementById("result")
+    if(Secret == Guess){
+        Correct = Correct+1;
+        alert("Congratulations");
+        out.innerHTML = "Correct! Your updated Score is:"+Correct
+    } else {
+        Wrong = Wrong+1;
+        alert("Sorry");
+        out.innerHTML = "Wrong :-( ! Your updated score is:"+Wrong
+    }
+}
+</script>
+
+</body>
+</html> 
