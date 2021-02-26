@@ -19,6 +19,9 @@
 
     <input type="button" onclick="processGuess()" value="Check the guess">
 </form>
+<div class="container">
+    <img src="Achimenes.jpg" id="image" onclick="rotateImage()" width="300px" height="300px" alt="Image">
+</div>
 
 
 <p id="result">Result</p>
@@ -26,6 +29,7 @@
 <script> 
 var Correct = 0;
 var Wrong = 0;
+var currentImage = 0;
 function processGuess (){
 
     console.log("Getting form values")
@@ -40,6 +44,24 @@ function processGuess (){
         Wrong = Wrong+1;
         alert("Sorry");
         out.innerHTML = "Wrong :-( ! Your updated score is:"+Wrong
+    }
+}
+function rotateImage(){
+    switch(currentImage){
+        case 0:
+            document.getElementById("image").src = "Achimenes.jpg";
+            currentImage = 1;
+            break;
+        case 1:
+            document.getElementById("image").src = "gardenia.jpg";
+            currentImage = 2;
+            break;
+        case 2:
+            document.getElementById("image").src = "Macodes.jpg";
+            currentImage = 0;
+            break;
+        default:
+            document.getElementById("image").src = "Achimenes.jpg"
     }
 }
 </script>
