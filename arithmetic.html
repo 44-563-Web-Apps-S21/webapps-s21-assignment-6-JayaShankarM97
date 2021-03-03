@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculations</title>
+    </head>
+ 
+<body>
+
+<h2>Computes by JayaShankar Mangina</h2>
+
+<form>
+    <label for="firstValue">Enter a number</label>
+    <input type ="number" id="firstValue" name="firstValue" value="10"> <br>
+
+    <label for="secondValue">Enter a number </label>
+    <input type ="number" id="secondValue" name="secondValue" value="2"> <br>
+
+    <input type="button" onclick="permutations()" value="Compute">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function permutations(){
+
+    console.log("Getting form values")
+    var first = document.getElementById("firstValue").value
+    var second = document.getElementById("secondValue").value
+    var product = 1;
+    
+    for(let i=first; i>=(first-second+1); i-- ){
+        product = product*i
+    }
+    
+    out = document.getElementById("result")
+    out.innerHTML = product
+}
+
+</script>
+
+</body>
+</html> 
