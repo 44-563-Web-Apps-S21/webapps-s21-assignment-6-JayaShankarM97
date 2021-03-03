@@ -21,6 +21,23 @@
 
 <p id="result">This text will be replaced </p>
 
+<form>
+    <input type="radio" id="add" name="addition" value="plus" onclick="processRadio()">
+    <label for="radioPlus"> + </label></br>
+  
+    <input type="radio" id="minus" name="subtraction" value="minus" onclick="processRadio()">
+    <label for="radioMinus"> - </label></br>
+  
+    <input type="radio" id="times" name="multiplication" value="times">
+    <label for="radioTimes"> * </label></br>
+
+    <input type="radio" id="divide" name="divison" value="divide">
+    <label for="radioTimes"> / </label></br>
+
+  </form>
+
+  <p id="result2">This text will be replaced </p>
+
 <script> 
 
 function permutations(){
@@ -33,9 +50,28 @@ function permutations(){
     for(let i=first; i>=(first-second+1); i-- ){
         product = product*i
     }
-    
+
     out = document.getElementById("result")
     out.innerHTML = product
+}
+
+function processRadio(){
+    console.log("Getting Form Values")
+    var first = document.getElementById("firstValue").value
+    var second = document.getElementById("secondValue").value
+    first = parseInt(first)
+    second = parseInt(second)
+    out = document.getElementById("result2")
+    if(document.getElementById("add").checked){
+        out.innerHTML = first + second
+    }else if(document.getElementById("minus").checked){
+        out.innerHTML = first - second
+    }else if(document.getElementById("times").checked){
+        out.innerHTML = first * second
+    }else if(document.getElementById("divide").checked){
+        out.innerHTML = first / second
+    }
+    
 }
 
 </script>
