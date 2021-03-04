@@ -5,26 +5,52 @@
             A Secret Project
         </title>
     </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
  
 <body>
 
 <h2>Hidden things by JayaShankar Mangina</h2>
+<p>
 
-<form>
-    <label for="password_page">Enter the Secret Word</label>
-    <input type ="password" id="password_page" value="Secret" name="Password" min=10 max=50 step=2 value=30> <br>
-
-    <label for="Guess_page">Enter a Guess</label>
-    <input type ="text" id="Guess_page" name="Guess" autofocus> <br>
-
-    <input type="button" onclick="processGuess()" value="Check the guess">
-</form>
+</p>
+<br>
 <div class="container">
+    <form>
+        <div class="form-group">
+            <label for="password_page">Enter the Secret Word</label>
+            <input type ="password" id="password_page" value="Secret" name="Password" min=10 max=50 step=2 value=30> <br>
+        </div>
+        <div class="form-group">
+            <label for="Guess_page">Enter a Guess</label>
+            <input type ="text" id="Guess_page" name="Guess" autofocus> <br>
+        </div>
+        <button type="Check the Guess" class="btn btn-primary bg-success" onclick="processGuess()">Check the Guess</button>
+    </form>
+</div>
+<br>
+<div class="container">
+    <p id="result">Result</p>
+</div>
+
+<br>
+<p>
+
+</p>
+<div class="container">
+    <div class="Text">
+        <a href="#" data-content="Link Hover">Click the Image Below</a>
+    </div>
+    <p>
+
+    </p>
     <img src="Achimenes.jpg" id="image" onclick="rotateImage()" width="300px" height="300px" alt="Image">
 </div>
 
 
-<p id="result">Result</p>
+
 
 <script> 
 var Correct = 0;

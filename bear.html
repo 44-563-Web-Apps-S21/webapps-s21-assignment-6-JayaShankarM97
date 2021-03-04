@@ -1,25 +1,63 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>The Bear Page</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
  
 <body>
 
 <h2>JayaShankar Mangina builds a Bear</h2>
+<div class="container">
+    <div class="form-group">
+        <img class="img-fluid" src="bear.jpg" alt="bear.jpg" width="250px" height="250px" alt="bear image">
+        <p>
 
+        </p>
+        <form>
+            <div class="checkbox">
+                <input type="checkbox" id="h1" name="h1" value="hat">
+                <label for="bearHAT"> Hat </label></br>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="s1" name="s1" value="scarf">
+                <label for="bearScarf"> Scarf </label></br>
+            </div>
+            <div>
+                <input type="checkbox" id="i1" name="i1" value="shirt">
+                <label for="bearShirt"> Shirt </label></br>
+            </div>
+            <button type="Start A Bear" class="btn btn-secondary bg-success" onclick="startbear()">Start a Bear</button>
+        </form>
+    </div>
+</div>
+    
+<br>
+<div class="container">
+    <p id="result3">When the button gets clicked, the "RESULT GOES HERE"</p>
+</div>
+<br>
+
+
+<div class="container">
     <form>
-        <input type="checkbox" id="h1" name="h1" value="hat">
-        <label for="bearHAT"> Hat </label></br>
-    
-        <input type="checkbox" id="s1" name="s1" value="scarf">
-        <label for="bearScarf"> Scarf </label></br>
-    
-        <input type="checkbox" id="i1" name="i1" value="shirt">
-        <label for="bearShirt"> Shirt </label></br>
-
-        <input type="button" onclick="startbear()" value="Start a BEAR">
+        <div class="form-group">
+            <label for="bearProperty">Enter a property</label>
+            <input type ="text" id="bearProperty" name="bearFormProperty" value="color"> <br>
+        </div>
+        <div class="form-group">
+            <label for="bearValue">What's your Value </label>
+            <input type ="text" id="bearValue" name="bearFormValue" > <br>
+        </div>
+        <div class="button">
+            <button type="Update the Bear" class="btn btn-primary " onclick="updatebear()">Update the BEAR</button>
+        </div>
     </form>
-
-
-<p id="result3">This text will be replaced </p>
+</div>
+    
 
 <script> 
 var my_bear = {}
@@ -27,21 +65,37 @@ function startbear(){
     my_bear = {}
     if(document.getElementById("h1").checked){
         my_bear["hat"] = true
+        alert("You just checked the Hat! It looks great on the Bear")
     }else{
         my_bear["hat"] = false
+        alert("Sad! you should've checked the Hat")
     }
 
     if(document.getElementById("s1").checked){
         my_bear["scarf"] = true
+        alert("You just picked the scarf! It looks great on the Bear")
     }else{
         my_bear["scarf"] = false
+        alert("Sad! you should've picked up the Scarf")
     }
 
     if(document.getElementById("i1").checked){
         my_bear["shirt"] = true
+        alert("You just selected the shirt! It looks great on the Bear")
     }else{
         my_bear["shirt"] = false
+        alert("Sad! you should've selected the Shirt")
     }
+    if(document.getElementById("h1").checked && document.getElementById("s1").checked && document.getElementById("i1").checked ){
+        alert("Wow! You have a Great Taste.")
+    }
+    document.getElementById("result3").innerHTML = Object.values(my_bear)
+}
+
+function updatebear(){
+    let pt = document.getElementById("bearProperty").value
+    let vl =document.getElementById("bearValue").value
+    my_bear[pt] = vl
     document.getElementById("result3").innerHTML = Object.values(my_bear)
 }
 
